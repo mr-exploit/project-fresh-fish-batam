@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- my css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="gambar/logo-3.png" />
+    <!-- ikon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <title>Checkout | Batam Fresh Fish</title>
+  </head>
+  <body>
+    <!-- membuat navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5s">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="gambar/logoo-1.png" width="60" height="40" /> Batam Fresh Fish</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="produk.html">Produk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- membuat checkout -->
+    <div>
+      <div class="mt-5 pt-5">
+        <h1 class="fw-bold mb-5 text-center">checkout</h1>
+        <div class="container">
+          <img src="gambar/tongkol.jpg" style="height: 500px; width: 100%" />
+          <h2 class="mt-3 fw-bold">Detail product</h2>
+          <h4>Rp 30.000 / Kg</h4>
+          
+          <form id="cart-oil" name="checkout">
+          <p>ikan tongkol ini merupakan ikan laut yang segar dan enak untuk dimasak,ikan tongkol juga memiliki beberapa khasiat dan langsung dari laut dan masih fresh</p>
+
+          <!-- detail tagihan -->
+          <h2 class="mt-3 fw-bold">Detail Tagihan</h2>
+          <div class="mb-3 col-5">
+            <label for="exampleFormControlInput1" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name Lengkap" name="nama"/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Alamat Lengkap</label>
+            <input type="address" class="form-control" id="exampleFormControlInput1" placeholder="Alamat rumah" name="alamat" />
+          </div>
+          <div class="mb-2 col-2">
+            <label for="exampleFormControlInput1" class="form-label">No Telepone</label>
+            <input type="phone" class="form-control" id="exampleFormControlInput1" name="nomor" />
+          </div>
+          <div class="mb-3 col-5">
+            <label for="exampleFormControlInput1" class="form-label">Kecamatan</label>
+            <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="name Lengkap" name="kecamatan" />
+          </div>
+          
+          <!-- pengiriman -->
+          <div id="summary">
+            <h3>menggunakan pengiriman</h3>
+            <div class="group state mb-5">
+              <label for="s-state">jasa :</label>
+              <select id="s-state" name="pengiriman">
+                <option value="">- pilihan -</option>
+                <option value="JNT">JNT </option>
+                <option value="JNE">JNE </option>
+                <option value="Grab">Grab</option>
+                <option value="Maxim">MAXIM </option>
+                
+              </select>
+            </div>
+            <!-- akhir pengiriman -->  
+          <h2 class="mb-3">Pesanan Anda</h2>
+          <!-- tabel -->
+          <div class="order">
+            <label for="txt-q-extra">Jumlah:</label>
+            <input type="text" id="txt-q-extra" size="3" placeholder="0" name="kg" /> Kg  
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="fs-4">Product</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Ikan tongkol x 1 Kg</th>
+                <td><div class="group calc">
+                  <p>
+                    <input type="text" id="txt-estimate" placeholder="$0.00" name="total">
+                    
+                  </p></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-bold fs-4">ongkir</th>
+                <td><div id="result" class="result"></div></td>
+              </tr>
+              <tr>
+                <th scope="row" class="fw-bold fs-4 mb-5">total</th>
+                <td><div id="results" class="results"></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- akhir tabel -->
+          <!-- transferan -->
+          <div class="group state mb-5">
+            <label for="s-state">sistem Pembayaran:</label>
+            <select id="s-state" name="transfer">
+              <option value="">- pilihan -</option>
+              <option value="Bank">Bank BCA | atas nama :muhamad raffi | no.rek :3262379792  </option>
+              <option value="COD">COD </option>
+              
+              
+            </select>
+          </div>
+          <!-- tombol -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary mt-3 btn-kirim mb-5">kirim</button>
+            <button class="btn btn-primary d-none btn-loading" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </div>
+          <div class="alert alert-primary alert-dismissible fade show d-none alert-saya" role="alert">
+            <strong>Terima kasih!</strong> pesan anda sudah diterima.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <!-- akhir -->
+        </form>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+  <!-- untuk Whastapp -->
+  <div class=" fixed-bottom mb-5">
+    <a href="https://wa.me/62895360202030?text=Nama%3A%0ANo.%20HP%3A%0AAlamat%3A%0APesanan%3A%0AJumlah%3A"><h1 class="bi bi-whatsapp text-success float-end fw-bold mx-2 d-none d-md-block"></h1></a>
+   </div>
+   
+   <!-- footer -->
+   <footer class="mt-5">
+     <div class="kecil">
+       <h4 class="text-center">&copy; Copyright2021 || Batam Fresh Fish </h4>
+   </div>
+ </footer>
+    <!-- checkout -->
+    <script src="js/shop-1.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     
+    <!--google sheet  -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxYJzSmvNo7cwXaydbyt8-KG9ggW4qa4xGimyuuEZoRjfUyZOOv6l56-e3c2vFO7wcA/exec';
+      const form = document.forms['checkout'];
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.alert-saya');
+      const myResult = document.querySelector('.result');
+      const myResults = document.querySelector('.results');
+    
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // ketika tombol submit di klik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            myResult.classList.toggle('d-none');
+            myResults.classList.toggle('d-none');
+            // tampilkan alert
+            myAlert.classList.toggle('d-none');
+            //reset forum
+            form.reset();
+            console.log('Success!', response);
+          })
+          .catch((error) => console.error('Error!', error.message));
+      });
+    </script>
+
+  </body>
+</html>
